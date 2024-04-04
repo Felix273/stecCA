@@ -137,7 +137,7 @@ As a prerequisite, you should just need an up and running WSL, Visual Studio Cod
 
 _Please refer to the [WSL installation guide](https://learn.microsoft.com/en-us/windows/wsl/install), [VsCode installation guide](https://code.visualstudio.com/docs/setup/windows) and [Docker installation guide](https://docs.docker.com/desktop/wsl/) to complete this passage_
 
-It is very quick and easy, don't worry.
+It is very quick and simple, don't worry.
 
 You need a working firewall, i suggest to
 * Install UFW
