@@ -131,15 +131,12 @@ The deployment is done with docker and some bash scripting, it makes data persis
 
 Getting the CA up and running is fairly easy if you pay attention in following these little steps, the guide and the scripts are assuming that you are using a windows subsystem for linux(WSL) 
 
-**If on debian, pay attention during the passage in wich the scripts imports the golang ppa**
-
-Windows is a nono, but maybe adapting the setup scripts will make it doable.
 
 ### Prerequisites
 
 As a prerequisite, you should just need an up and running Docker and Docker Compose installation. This will not be done by the script.
 
-_Please refer to the [Docker install guide](https://docs.docker.com/engine/install/) and [Docker-Compose install guide](https://docs.docker.com/compose/install/) to complete this passage_
+_Please refer to the [Docker install guide](https://docs.docker.com/desktop/wsl/) to complete this passage_
 
 It is very quick and easy, don't worry.
 
