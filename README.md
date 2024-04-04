@@ -129,14 +129,13 @@ The deployment is done with docker and some bash scripting, it makes data persis
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Getting the CA up and running is fairly easy if you pay attention in following these little steps, the guide and the scripts are assuming that you are using a windows subsystem for linux(WSL) 
+Getting the CA up and running is fairly easy if you pay attention in following these little steps, the guide and the scripts are assuming that you are using a Windows Operating system.
 
 
 ### Prerequisites
+As a prerequisite, you should just need an up and running WSL, Visual Studio Code and Docker. This will not be done by the script.
 
-As a prerequisite, you should just need an up and running Docker and Docker Compose installation. This will not be done by the script.
-
-_Please refer to the [Docker install guide](https://docs.docker.com/desktop/wsl/) to complete this passage_
+_Please refer to the [WSL installation guide]..(https://learn.microsoft.com/en-us/windows/wsl/install),[VsCode installation guide](https://code.visualstudio.com/docs/setup/windows) and [Docker installation guide](https://docs.docker.com/desktop/wsl/) to complete this passage_
 
 It is very quick and easy, don't worry.
 
