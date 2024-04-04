@@ -135,7 +135,7 @@ Getting the CA up and running is fairly easy if you pay attention in following t
 ### Prerequisites
 As a prerequisite, you should just need an up and running WSL, Visual Studio Code and Docker. This will not be done by the script.
 
-_Please refer to the [WSL installation guide] (https://learn.microsoft.com/en-us/windows/wsl/install) and [VsCode installation guide](https://code.visualstudio.com/docs/setup/windows) and [Docker installation guide](https://docs.docker.com/desktop/wsl/) to complete this passage_
+_Please refer to the [WSL installation guide](https://learn.microsoft.com/en-us/windows/wsl/install) and [VsCode installation guide](https://code.visualstudio.com/docs/setup/windows) and [Docker installation guide](https://docs.docker.com/desktop/wsl/) to complete this passage_
 
 It is very quick and easy, don't worry.
 
