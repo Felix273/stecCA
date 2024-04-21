@@ -135,11 +135,12 @@ Getting the CA up and running is fairly easy if you pay attention in following t
 ### Prerequisites
 As a prerequisite, you should just need an up and running Docker and Docker Compose installation. This will not be done by the script.
 
-1. _Please refer to the [Docker install guide](https://docs.docker.com/engine/install/) and [Docker-Compose install guide](https://docs.docker.com/compose/install/) to complete this passage_
+1. _Please refer to the [Docker install guide](https://docs.docker.com/engine/install/) and [Docker-Compose install guide](https://docs.docker.com/compose/install/) to complete this passage_.
 2. _Install Postgres Install_
     ```sudo apt install postgresql postgresql-contrib```
    _verify installation_
    ```systemctl status postgresql```
+   
 3. _Install Golang_
    ```sudo apt install golang```
    Extract the tarball to `/usr/local`
@@ -151,7 +152,29 @@ As a prerequisite, you should just need an up and running Docker and Docker Comp
    _Verify installation_
    ```go version```
 
-5. 
+4. _Install cfssl_
+   `wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64`
+   `wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64`
+   `wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64`
+
+   _Make the binaries executable:_
+   `chmod +x cfssl_linux-amd64 cfssljson_linux-amd64 cfssl-certinfo_linux-amd64`
+
+   _Move the binaries to a directory in your PATH:_
+   `sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl`
+   `sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson`
+   `sudo mv cfssl-certinfo_linux-amd64 /usr/local/bin/cfssl-certinfo`
+
+   _Verify Installation_
+   ```
+   cfssl version
+   ```
+
+   
+
+
+
+
 It is very quick and simple, don't worry.
 
 You need a working firewall, i suggest to
