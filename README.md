@@ -136,7 +136,7 @@ Getting the CA up and running is fairly easy if you pay attention in following t
 As a prerequisite, you should just need an up and running Docker and Docker Compose installation. This will not be done by the script.
 
 1. _Please refer to the [Docker install guide](https://docs.docker.com/engine/install/) and [Docker-Compose install guide](https://docs.docker.com/compose/install/) to complete this passage_.
-2. _Install Postgres Install_
+2. Install Postgres Install:
     ```
    sudo apt install postgresql postgresql-contrib
     ```
@@ -162,7 +162,7 @@ As a prerequisite, you should just need an up and running Docker and Docker Comp
    ```
    Log out from your postgres user session.
    
-4. _Install Golang_
+3. Install Golang:
    ```
    sudo apt install golang
    ```
@@ -177,29 +177,41 @@ As a prerequisite, you should just need an up and running Docker and Docker Comp
    go version
    ```
 
-6. _Install cfssl_
+4. Install cfssl via go:
    ```
-    wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
-    wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
-    wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64
-   ```
-
-   _Make the binaries executable:_
-   ```
-   chmod +x cfssl_linux-amd64 cfssljson_linux-amd64 cfssl-certinfo_linux-amd64
+    sudo apt update
+    sudo apt install golang-go
    ```
 
-   _Move the binaries to a directory in your PATH:_
+   _set up your Go environment variables._
    ```
-    sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl
-    sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
-    sudo mv cfssl-certinfo_linux-amd64 /usr/local/bin/cfssl-certinfo
+   export GOPATH=$HOME/go
+   export PATH=$PATH:$GOPATH/bin
+   ```
+
+   _Apply the changes by running::_
+   ```
+    source ~/.bashrc
    ```
 
    _Verify Installation_
    ```
    cfssl version
    ```
+
+5. Install lemur:
+   -Ensure you have Python installed on your system. Lemur requires Python 2.7 or Python 3.4+.
+   ```
+      sudo apt-get update
+      sudo apt-get install build-essential libssl-dev libffi-dev python3-dev python3-pip python3-venv libpq-dev libxml2-dev libxslt-dev
+   ```
+
+   ```
+      pip install cryptography
+      pip install lemur
+   ```
+
+
 
    
 
