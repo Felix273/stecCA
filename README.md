@@ -144,6 +144,23 @@ As a prerequisite, you should just need an up and running Docker and Docker Comp
    ```
    systemctl status postgresql
    ```
+   _Create User on the postgresql_
+    ```
+    useradd cfssl
+    ```
+   _Create Database_
+   ```
+   su - postgres
+   ```
+   ```
+   psql
+   ```
+   ```
+   CREATE USER u_cfssl WITH PASSWORD 'yR5rS6eO4rG3eI3vI3fT3wY2tJ6uP9jOgQ1fK2xC4qX5rN0gR9iZ1lI6lP1hV9jK';
+   CREATE DATABASE db_cfssl OWNER u_cfssl;
+   \q
+   ```
+   Log out from your postgres user session.
    
 4. _Install Golang_
    ```
