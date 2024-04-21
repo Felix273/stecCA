@@ -137,12 +137,18 @@ As a prerequisite, you should just need an up and running Docker and Docker Comp
 
 1. _Please refer to the [Docker install guide](https://docs.docker.com/engine/install/) and [Docker-Compose install guide](https://docs.docker.com/compose/install/) to complete this passage_.
 2. _Install Postgres Install_
-    ```sudo apt install postgresql postgresql-contrib```
+    ```
+   sudo apt install postgresql postgresql-contrib
+    ```
    _verify installation_
-   ```systemctl status postgresql```
+   ```
+   systemctl status postgresql
+   ```
    
-3. _Install Golang_
-   ```sudo apt install golang```
+4. _Install Golang_
+   ```
+   sudo apt install golang
+   ```
    Extract the tarball to `/usr/local`
    Add the following lines to your ~/.profile or ~/.bashrc file to set up Go's environment variables:
        `export GOPATH=$HOME/go`
@@ -150,20 +156,28 @@ As a prerequisite, you should just need an up and running Docker and Docker Comp
    To apply these changes to your current session, run:
        `source ~/.profile`
    _Verify installation_
-   ```go version```
+   ```
+   go version
+   ```
 
-4. _Install cfssl_
-   `wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64`
-   `wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64`
-   `wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64`
+6. _Install cfssl_
+   ```
+    wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+    wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+    wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64
+   ```
 
    _Make the binaries executable:_
-   `chmod +x cfssl_linux-amd64 cfssljson_linux-amd64 cfssl-certinfo_linux-amd64`
+   ```
+   chmod +x cfssl_linux-amd64 cfssljson_linux-amd64 cfssl-certinfo_linux-amd64
+   ```
 
    _Move the binaries to a directory in your PATH:_
-   `sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl`
-   `sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson`
-   `sudo mv cfssl-certinfo_linux-amd64 /usr/local/bin/cfssl-certinfo`
+   ```
+    sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl
+    sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
+    sudo mv cfssl-certinfo_linux-amd64 /usr/local/bin/cfssl-certinfo
+   ```
 
    _Verify Installation_
    ```
