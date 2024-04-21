@@ -211,6 +211,14 @@ As a prerequisite, you should just need an up and running Docker and Docker Comp
       pip install lemur
    ```
 
+NB/ Follow the link below to make the changes on the following:
+   1. Go version.
+   2. npm repository TLS
+   3. Change lemur docker image using jockerdragon image.
+      
+   ```
+      https://github.com/steccas/stecCA/pull/11
+   ```
 
 
    
