@@ -133,10 +133,25 @@ Getting the CA up and running is fairly easy if you pay attention in following t
 
 
 ### Prerequisites
-As a prerequisite, you should just need an up and running WSL, Visual Studio Code and Docker. This will not be done by the script.
+As a prerequisite, you should just need an up and running Docker and Docker Compose installation. This will not be done by the script.
 
-_1. Please refer to the [WSL installation guide](https://learn.microsoft.com/en-us/windows/wsl/install), [VsCode installation guide](https://code.visualstudio.com/docs/setup/windows) and [Docker installation guide(WSL)](https://docs.docker.com/desktop/wsl/) to complete this passage_
+1. _Please refer to the [Docker install guide](https://docs.docker.com/engine/install/) and [Docker-Compose install guide](https://docs.docker.com/compose/install/) to complete this passage_
+2. _Install Postgres Install_
+    ```sudo apt install postgresql postgresql-contrib```
+   _verify installation_
+   ```systemctl status postgresql```
+3. _Install Golang_
+   ```sudo apt install golang```
+   Extract the tarball to `/usr/local`
+   Add the following lines to your ~/.profile or ~/.bashrc file to set up Go's environment variables:
+       `export GOPATH=$HOME/go`
+       `export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin`
+   To apply these changes to your current session, run:
+       `source ~/.profile`
+   _Verify installation_
+   ```go version```
 
+5. 
 It is very quick and simple, don't worry.
 
 You need a working firewall, i suggest to
