@@ -156,12 +156,15 @@ I'm using nano in some commands, but you can use any editor you want of course!
     ```sh
     git clone https://github.com/Steccas/stecCA.git
     ```
-    [For this repo]
+    _For this repo_
     ```sh
     git clone [https://github.com/Steccas/stecCA.git](https://github.com/Felix273/stecCA)
     ```
-    
-3. Edit [cfssl-config.json](https://github.com/Steccas/stecCA/blob/main/cfssl-config.json) to have the right url for yor crl and oscp, it may be localhost. Leave the same ports.
+2.Edit line 33 of [setup_cfssl.sh]([https://github.com/Steccas/stecCA/blob/main/cfssl-config.json](https://github.com/Felix273/stecCA/blob/main/setup_cfssl.sh)) to have the right path to your go directory.
+    ```sh
+    /usr/local/go/bin/go install bitbucket.org/liamstask/goose/cmd/goose@latest
+    ```
+3.  Edit [cfssl-config.json](https://github.com/Steccas/stecCA/blob/main/cfssl-config.json) to have the right url for yor crl and oscp, it may be localhost. Leave the same ports.
     ```sh
     nano ./cfssl-config.json
     ```
