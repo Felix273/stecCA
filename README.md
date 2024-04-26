@@ -62,15 +62,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-I needed to manage certificates for my home lab, I'm self-hosting some services and of course, I wanted a full working SSL without errors.
+Ever wanted or had the need to manage certificates for your private homelabs? Worry no more this project provides a full working SSL and yes it has no errors!
 
-In these situations, a Certificate Authority is needed, but using OpenSSL just from the terminal resulted unpractically and not ideal for managing the various certificates; so I decided to deploy a better system to do these tasks.
+This calls the need to have a Certificate Authority and with OpenSSL the terminal is not so fancy for some certificates so i had to check for better system, thanks to steccas here we are.
 
-So I came across Lemur and CFSSL... I choose CFSSL because it has a very easy to use CLI, offers an OSCP responder and it is integrable with Lemur; Lemur is a platform that offers a web interface and SQL Database for managing the certificates, this way issuing, revoking, and keep track of them would be much more efficient to do.
+With the ease of using CFSSL CLI and the OSCP responder and its simple integration with lemur a merge of the two sounds inevitable. Ofcourse lemur provides the web UI for the management, issuing, revoking and tracking of certificates is straightforward.
 
-Anyways, there were no products that integrated all of these technologies so using some guides and my expertise I've set up them together using docker and some scripts to have everything as clean as possible and very easy to redeploy.
-
-Now I'm publishing it to GitHub because it could be really useful for a lot of people! I'd also like to further improve the projects making the integration better and adding even more functionalities for various use cases.
+Thanks to [Steccas]((https://github.com/steccas/stecCA/tree/main)) for bringing everything together and just like memorizing the alphabet all we need to do is just follow prompts and instructions.
 
 *Need to quickly set up your CA in a matter of minutes? It is not a problem anymore!*
 
@@ -161,7 +159,7 @@ I'm using nano in some commands, but you can use any editor you want of course!
     ```sh
     git clone [https://github.com/Steccas/stecCA.git](https://github.com/Felix273/stecCA)
     ```
-2.Edit line 33 of [setup_cfssl.sh]([https://github.com/Steccas/stecCA/blob/main/cfssl-config.json](https://github.com/Felix273/stecCA/blob/main/setup_cfssl.sh)) to have the right path to your go directory.
+2.  Edit line 33 of [setup_cfssl.sh]([https://github.com/Steccas/stecCA/blob/main/cfssl-config.json](https://github.com/Felix273/stecCA/blob/main/setup_cfssl.sh)) to have the right path to your go directory.
 
     ```sh
     /usr/local/go/bin/go install bitbucket.org/liamstask/goose/cmd/goose@latest
