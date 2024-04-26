@@ -152,7 +152,7 @@ Otherwise, you need to edit lines 69 and 70 of [setup_cfssl.sh](https://github.c
 I'm using nano in some commands, but you can use any editor you want of course!
 
 1. Clone the repo
-   [For the original repo by Steccas]
+   _For the original repo by Steccas_
     ```sh
     git clone https://github.com/Steccas/stecCA.git
     ```
