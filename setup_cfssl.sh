@@ -29,10 +29,10 @@ then
     #setup cfss env
     useradd cfssl
     mkdir -p /etc/cfssl/certs
+    
+    /usr/local/go/bin/go install bitbucket.org/liamstask/goose/cmd/goose@latest
 
-    go get github.com/cloudflare/cfssl/cmd/...
-    go get bitbucket.org/liamstask/goose/cmd/goose
-    cp -r $HOME/go/bin/* /usr/local/bin/
+    cp -r /usr/local/go/bin/* /usr/local/bin/
 
     cp ./db_config.json /etc/cfssl/
     
@@ -58,7 +58,7 @@ then
 
     #setup services and fw
     rsync -avzhp ./cfssl.service ./ocsp.service /etc/systemd/system/
-
+    echo "KAble ya certs"
     echo "Now, paste the generated pem certs (not the key) in lemur configuration (edit bottom of lemur.conf.py) and set the address of the ca (this machine address (localhost?) or DNS name) then press ENTER"
     echo "ROOT"
     cat /etc/cfssl/certs/root_ca.pem
@@ -106,3 +106,4 @@ else
 fi
 
 exit 1
+
