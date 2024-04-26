@@ -70,7 +70,7 @@ With the ease of using CFSSL CLI and the OSCP responder and its simple integrati
 
 Thanks to [Steccas]((https://github.com/steccas/stecCA/tree/main)) for bringing everything together and just like memorizing the alphabet all we need to do is just follow prompts and instructions.
 
-*Need to quickly set up your CA in a matter of minutes? It is not a problem anymore!*
+*In minutes get your CA up n running!*
 
 ## Built with
 
