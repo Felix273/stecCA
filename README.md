@@ -64,7 +64,7 @@
 
 Ever wanted or had the need to manage certificates for your private homelabs? Worry no more this project provides a full working SSL and yes it has no errors!
 
-This calls the need to have a Certificate Authority and with OpenSSL the terminal is not so fancy for some certificates so i had to check for better system, thanks to steccas here we are.
+This calls the need to have a Certificate Authority and with OpenSSL, the terminal, is not so fancy for some certificates so i had to check for better system, thanks to steccas here we are.
 
 With the ease of using CFSSL CLI and the OSCP responder and its simple integration with lemur a merge of the two sounds inevitable. Ofcourse lemur provides the web UI for the management, issuing, revoking and tracking of certificates is straightforward.
 
