@@ -29,9 +29,9 @@ then
     #setup cfss env
     useradd cfssl
     mkdir -p /etc/cfssl/certs
-    
-    /usr/local/go/bin/go install bitbucket.org/liamstask/goose/cmd/goose@latest
 
+    /usr/local/go/bin/go install bitbucket.org/liamstask/goose/cmd/goose@latest
+    /usr/local/go/bin/go install github.com/cloudflare/cfssl/cmd/cfssl@latest
     cp -r /usr/local/go/bin/* /usr/local/bin/
 
     cp ./db_config.json /etc/cfssl/
@@ -52,13 +52,14 @@ then
     echo "custom:" | tee -a $HOME/go/pkg/mod/github.com/cloudflare/cfssl*/certdb/pg/dbconf.yml
     echo "  driver: postgres" | tee -a $HOME/go/pkg/mod/github.com/cloudflare/cfssl*/certdb/pg/dbconf.yml
     echo "  open: user=$user password=$dbpass dbname=cfssl sslmode=disable" | tee -a $HOME/go/pkg/mod/github.com/cloudflare/cfssl*/certdb/pg/dbconf.yml
+    
 
     unset user
     unset dbpass
 
     #setup services and fw
     rsync -avzhp ./cfssl.service ./ocsp.service /etc/systemd/system/
-    echo "KAble ya certs"
+
     echo "Now, paste the generated pem certs (not the key) in lemur configuration (edit bottom of lemur.conf.py) and set the address of the ca (this machine address (localhost?) or DNS name) then press ENTER"
     echo "ROOT"
     cat /etc/cfssl/certs/root_ca.pem
@@ -77,8 +78,9 @@ then
     #start everything
     docker-compose up -d
 
-    goose --env custom -path $HOME/go/pkg/mod/github.com/cloudflare/cfssl*/certdb/pg up
-
+    goose -path "$(ls -d $HOME/go/pkg/mod/github.com/cloudflare/cfssl*/certdb/pg)" up
+    
+    
     systemctl daemon-reload
     systemctl enable cfssl.service
     systemctl enable ocsp.service
@@ -106,4 +108,3 @@ else
 fi
 
 exit 1
-
