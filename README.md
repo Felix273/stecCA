@@ -139,7 +139,7 @@ It is as easy as it gets, brace yourself you'll be up and running in a few...
 
 2. _Please refer to the [Go install guide](https://go.dev/doc/install) to complete this passage_.
    
-3.Create a Database, ofcourse you have to be logged in to postgres
+3. Create a Database, ofcourse you have to be logged in to postgres
 ```sh
 CREATE USER <username> WITH PASSWORD <'password'>;
 CREATE DATABASE <db_name> OWNER <username>;
