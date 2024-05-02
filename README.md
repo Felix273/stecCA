@@ -127,7 +127,7 @@ The deployment is done with docker and some bash scripting, it makes data persis
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Getting the CA up and running is fairly easy if you pay attention in following these little steps, the guide and the scripts are assuming that you are using a Windows Operating system.
+Getting the CA up and running is fairly easy if you pay attention in following these little steps, the guide and the scripts are assuming that you are using a Linux Operating system.
 
 
 ### Prerequisites
