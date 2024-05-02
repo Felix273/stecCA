@@ -131,12 +131,21 @@ Getting the CA up and running is fairly easy if you pay attention in following t
 
 
 ### Prerequisites
-As a prerequisite, you should just need an up and running Docker and Docker Compose installation. This will not be done by the script.
+As a prerequisite, it is assumed you have go, Docker and Docker Compose installed as this won't be done by the script.
+
+It is as easy as it gets, brace yourself you'll be up and running in a few...
 
 1. _Please refer to the [Docker install guide](https://docs.docker.com/engine/install/) and [Docker-Compose install guide](https://docs.docker.com/compose/install/) to complete this passage_.
-  
-It is very quick and simple, don't worry.
 
+2. _Please refer to the [Go install guide](https://go.dev/doc/install) to complete this passage_.
+   
+3.Create a Database, ofcourse you have to be logged in to postgres
+```sh
+CREATE USER <username> WITH PASSWORD <'password'>;
+CREATE DATABASE <db_name> OWNER <username>;
+\q
+```
+   
 You need a working firewall, i suggest to
 * Install UFW
   ```sh
@@ -159,35 +168,36 @@ I'm using nano in some commands, but you can use any editor you want of course!
     ```sh
     git clone [https://github.com/Steccas/stecCA.git](https://github.com/Felix273/stecCA)
     ```
-2.  Edit line 33 of [setup_cfssl.sh](https://github.com/Felix273/stecCA/blob/main/setup_cfssl.sh)  to have the right path to your go directory.
+2.  Edit lines 33,34  of [setup_cfssl.sh](https://github.com/Felix273/stecCA/blob/main/setup_cfssl.sh)  to have the right path to your go directory.
 
     ```sh
     /usr/local/go/bin/go install bitbucket.org/liamstask/goose/cmd/goose@latest
+    /usr/local/go/bin/go install github.com/cloudflare/cfssl/cmd/cfssl@latest
     ```
     
-3.  Edit [cfssl-config.json](https://github.com/Steccas/stecCA/blob/main/cfssl-config.json) to have the right url for yor crl and oscp, it may be localhost. Leave the same ports.
+3.  Edit [cfssl-config.json](https://github.com/Felix273/stecCA/blob/main/cfssl-config.json) to have the right url for yor crl and oscp, it may be localhost. Leave the same ports.
    
     ```sh
     nano ./cfssl-config.json
     ```
     
-5. Edit [csr_root_ca.json](https://github.com/Steccas/stecCA/blob/main/csr_root_ca.json) and [csr_intermediate_ca.json](https://github.com/Steccas/stecCA/blob/main/csr_intermediate_ca.json) to setup the right values for your root CA and intermediate CA, there are already exaple values, change them and you are good to go.
+5. Edit [csr_root_ca.json](https://github.com/Felix273/stecCA/blob/main/csr_root_ca.json) and [csr_intermediate_ca.json](https://github.com/Felix273/stecCA/blob/main/csr_intermediate_ca.json) to setup the right values for your root CA and intermediate CA, there are already exaple values, change them and you are good to go.
    
     ```sh
     nano ./csr_root_ca.json
     nano ./csr_intermediate_ca.json
     ```
-7. Similiarly, edit [ocsp.csr.json](https://github.com/Steccas/stecCA/blob/main/ocsp.csr.json) to have the right informations for your OCSP.
+7. Similiarly, edit [ocsp.csr.json](https://github.com/Felix273/stecCA/blob/main/ocsp.csr.json) to have the right informations for your OCSP.
     ```sh
     nano ./ocsp.csr.json
     ```
     
-8. Edit [lemur.env](https://github.com/Steccas/stecCA/blob/main/lemur.env) to have the same informations available to Lemur. Don't touch the password, it will be set later automatically.
+8. Edit [lemur.env](https://github.com/Felix273/stecCA/blob/main/lemur.env) to have the same informations available to Lemur. Don't touch the password, it will be set later automatically.
     ```sh
     nano ./lemur.env
     ```
 
-9. Edit [creds.env](https://github.com/Steccas/stecCA/blob/main/creds.env) to setup username and password for DB and other services, they will be automatically changed in the other files and will be automatically used; so use a complicated one.
+9. Edit [creds.env](https://github.com/Felix273/stecCA/blob/main/creds.env) to setup username and password for DB and other services, they will be automatically changed in the other files and will be automatically used; so use a complicated one.
     ```sh
     nano ./creds.env
     ```
@@ -199,7 +209,7 @@ I'm using nano in some commands, but you can use any editor you want of course!
     sudo ./setup_cfssl.sh
     ```
 
-11. The setup will ask at some point to paste the pem certs data at the bottom of [lemur.conf.py](https://github.com/Steccas/stecCA/blob/main/lemur.conf.py), it is important or Lemur WILL NOT WORK.
+11. The setup will ask at some point to paste the pem certs data at the bottom of [lemur.conf.py](https://github.com/Felix273/stecCA/blob/main/lemur.conf.py), it is important or Lemur WILL NOT WORK.
     ```sh
     nano ./lemur.conf.py
     ```
